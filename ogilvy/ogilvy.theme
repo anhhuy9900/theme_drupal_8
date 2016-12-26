@@ -76,3 +76,42 @@ function ogilvy_theme_suggestions_form_alter(array &$suggestions, array $variabl
 function ogilvy_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 
 }
+
+/**
+ * Implements hook_css_alter() to alter CSS files before they are output on the page.
+ *
+ * @param $css
+ *   An array of all CSS items (files and inline CSS) being requested on the page.
+ * @param \Drupal\Core\Asset\AttachedAssetsInterface $assets
+ *   The assets attached to the current response.
+ *
+ * @see Drupal\Core\Asset\LibraryResolverInterface::getCssAssets()
+ */
+function ogilvy_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  foreach ($css as $filename => $info) {
+    if(strpos($filename, 'core/') === 0) {
+      unset($css[$filename]);
+    }
+  }
+}
+
+/**
+ * Implements hook_js_alter() to perform necessary alterations to the JavaScript before it is presented on
+ * the page.
+ *
+ * @param $javascript
+ *   An array of all JavaScript being presented on the page.
+ * @param \Drupal\Core\Asset\AttachedAssetsInterface $assets
+ *   The assets attached to the current response.
+ *
+ * @see drupal_js_defaults()
+ * @see \Drupal\Core\Asset\AssetResolver
+ */
+function ogilvy_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  foreach ($javascript as $filename => $info) {
+    if(strpos($filename, 'core/') === 0) {
+      unset($javascript[$filename]);
+    }
+  }
+}
+

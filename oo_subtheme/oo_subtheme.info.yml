@@ -1,0 +1,29 @@
+name: OO SubTheme
+type: theme
+description: 'This is OO SubTheme'
+package: Alpha
+# version: VERSION
+# core: 8.x
+
+# Defines the base theme
+base theme: oo_theme
+
+libraries:
+  - oo_theme/global
+  - oo_subtheme/global
+
+regions:
+  header: Header
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  breadcrumb: 'Breadcrumb'
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+
+# Information added by Drupal.org packaging script on 2016-02-01
+version: '8.x-1.0'
+core: '8.x'
+project: 'oo_subtheme'
+datestamp: 1454362743

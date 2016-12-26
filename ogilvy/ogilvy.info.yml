@@ -2,18 +2,18 @@
 name: Ogilvy
 type: theme
 description: 'D8 Theme for a basic leaflet site.'
-package: Core
+package: Alpha
 # version: VERSION
 # core: 8.x
-
-libraries:
-  - ogilvy/global
 
 regions:
   header: Header
   content: Content
   sidebar_first: 'Sidebar first'
   footer: 'Footer'
+  
+libraries:
+  - ogilvy/global
 
 version: VERSION
 core: '8.x'
